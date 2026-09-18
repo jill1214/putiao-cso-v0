@@ -1,5 +1,5 @@
 import { SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 export function CultureHeritage() {
@@ -18,7 +18,7 @@ export function CultureHeritage() {
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
           {blocks.map((block) => (
             <div key={block.title}>
-              <ImagePlaceholder label={block.image.label} aspectRatio={block.image.aspectRatio} className="rounded-[20px]" />
+              <DiscoverImage image={block.image} className="rounded-[20px]" sizes="(min-width: 640px) 33vw, 100vw" />
               <h3 className="mt-5 text-lg font-extrabold tracking-tight text-[#10221b]">{block.title}</h3>
               <p className="mt-2 text-sm leading-6 text-[#66736d]">{block.copy}</p>
             </div>

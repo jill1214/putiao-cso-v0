@@ -1,5 +1,5 @@
 import { SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 export function PeopleOfPutiao() {
@@ -15,10 +15,10 @@ export function PeopleOfPutiao() {
           <p className="mt-5 max-w-md text-sm leading-7 text-[#66736d]">{copy}</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <ImagePlaceholder label={portrait1.label} aspectRatio={portrait1.aspectRatio} className="rounded-[24px]" />
-          <ImagePlaceholder label={portrait2.label} aspectRatio={portrait2.aspectRatio} className="rounded-[24px] sm:mt-8" />
-          <ImagePlaceholder label={life1.label} aspectRatio={life1.aspectRatio} className="rounded-[24px]" />
-          <ImagePlaceholder label={life2.label} aspectRatio={life2.aspectRatio} className="rounded-[24px] sm:-mt-8" />
+          <DiscoverImage image={portrait1} className="rounded-[24px]" sizes="(min-width: 1024px) 25vw, 50vw" />
+          <DiscoverImage image={portrait2} className="rounded-[24px] sm:mt-8" sizes="(min-width: 1024px) 25vw, 50vw" />
+          <DiscoverImage image={life1} className="rounded-[24px]" sizes="(min-width: 1024px) 25vw, 50vw" />
+          <DiscoverImage image={life2} className="rounded-[24px] sm:-mt-8" sizes="(min-width: 1024px) 25vw, 50vw" />
         </div>
       </div>
     </section>

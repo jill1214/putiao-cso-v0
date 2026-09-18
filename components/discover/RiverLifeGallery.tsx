@@ -1,5 +1,5 @@
 import { SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 const areaClassByIndex = [
@@ -27,12 +27,11 @@ export function RiverLifeGallery() {
         className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:grid-rows-3 lg:gap-5 lg:[grid-template-areas:'large_large_med1'_'large_large_med2'_'small1_small2_small3']"
       >
         {gallery.map((item, index) => (
-          <ImagePlaceholder
+          <DiscoverImage
             key={item.label}
-            label={item.label}
-            caption={item.caption}
-            aspectRatio={item.aspectRatio}
+            image={item}
             className={`rounded-[18px] ${index === 0 ? 'col-span-2 sm:col-span-1' : ''} ${areaClassByIndex[index]}`}
+            sizes={index === 0 ? '(min-width: 1024px) 66vw, 100vw' : '(min-width: 1024px) 33vw, 50vw'}
           />
         ))}
       </div>

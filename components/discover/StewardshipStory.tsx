@@ -1,5 +1,5 @@
 import { SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 export function StewardshipStory() {
@@ -17,7 +17,7 @@ export function StewardshipStory() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {images.map((image) => (
-            <ImagePlaceholder key={image.label} label={image.label} aspectRatio={image.aspectRatio} className="rounded-[20px]" />
+            <DiscoverImage key={image.label} image={image} className="rounded-[20px]" sizes="(min-width: 640px) 33vw, 100vw" />
           ))}
         </div>
         <p className="mt-6 text-center text-xs font-semibold text-[#45554e]">

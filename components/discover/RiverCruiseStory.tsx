@@ -1,5 +1,5 @@
 import { ArrowLink, SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 export function RiverCruiseStory() {
@@ -9,7 +9,7 @@ export function RiverCruiseStory() {
     <section className="bg-[#f5f8f5]">
       <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:py-28">
         <div className="lg:order-2">
-          <ImagePlaceholder label={image.label} caption={image.caption} aspectRatio={image.aspectRatio} className="min-h-[260px] rounded-[28px] lg:min-h-[380px]" />
+          <DiscoverImage image={image} className="min-h-[260px] rounded-[28px] lg:min-h-[380px]" sizes="(min-width: 1024px) 50vw, 100vw" />
         </div>
         <div className="lg:order-1">
           <SectionLabel>Responsible eco-tourism</SectionLabel>

@@ -3,6 +3,8 @@ export type PlaceholderImage = {
   caption?: string;
   aspectRatio: string;
   src?: string;
+  alt?: string;
+  objectPosition?: string;
 };
 
 export const discoverPutiao = {
@@ -26,6 +28,8 @@ export const discoverPutiao = {
       label: "River image",
       caption: "Wide scenic Putiao River photo",
       aspectRatio: "4/3",
+      src: "/images/discover/river/putiao-river-wide.jpg",
+      alt: "Wide view of a bend in the Putiao River lined with trees and a riverside hut",
     } satisfies PlaceholderImage,
     indicators: ["Nature", "Livelihood", "Community"],
   },
@@ -39,36 +43,48 @@ export const discoverPutiao = {
         caption: "Riverbank life",
         aspectRatio: "3/2",
         size: "large",
+        src: "/images/discover/river-life/riverbank-kayak-swim.jpg",
+        alt: "A kayaker paddling the Putiao River while children swim nearby, framed by palm leaves",
       },
       {
         label: "River Life 02",
         caption: "Boats",
         aspectRatio: "1/1",
         size: "medium",
+        src: "/images/discover/river-life/kayaking-pair.jpg",
+        alt: "Two people kayaking together on the Putiao River",
       },
       {
         label: "River Life 03",
         caption: "Fishing or livelihood",
         aspectRatio: "1/1",
         size: "medium",
+        src: "/images/discover/river-life/fishing-net-boat.jpg",
+        alt: "A young fisherman lowering a net from a wooden boat on the Putiao River",
       },
       {
         label: "River Life 04",
         caption: "People",
         aspectRatio: "4/3",
         size: "small",
+        src: "/images/discover/river-life/community-gathering-torches.jpg",
+        alt: "Community members gathered by torchlight near the river at dusk",
       },
       {
         label: "River Life 05",
         caption: "Mangroves",
         aspectRatio: "4/3",
         size: "small",
+        src: "/images/discover/river-life/cattle-riverside.jpg",
+        alt: "A resident tending cattle near the riverbank under coconut palms",
       },
       {
         label: "River Life 06",
         caption: "Everyday scenes",
         aspectRatio: "4/3",
         size: "small",
+        src: "/images/discover/river-life/community-bonfire.jpg",
+        alt: "Community members gathered around a bonfire near the river at night",
       },
     ] as Array<PlaceholderImage & { size: "large" | "medium" | "small" }>,
   },
@@ -80,6 +96,9 @@ export const discoverPutiao = {
       label: "River cruise image",
       caption: "Putiao River Cruise / Boat Experience",
       aspectRatio: "3/2",
+      src: "/images/discover/cruise/explore-putiao-river.jpg",
+      alt: "View from a boat on the Putiao River passing a riverside hut surrounded by trees",
+      objectPosition: "center 60%",
     } satisfies PlaceholderImage,
     badge: { title: "Putiao River Cruise", status: "In development" },
     supportingText:
@@ -104,7 +123,12 @@ export const discoverPutiao = {
     gallery: [
       { label: "Community Portrait 01", aspectRatio: "3/4" },
       { label: "Community Portrait 02", aspectRatio: "3/4" },
-      { label: "Community Life 01", aspectRatio: "4/3" },
+      {
+        label: "Community Life 01",
+        aspectRatio: "4/3",
+        src: "/images/discover/community/weaving-palm-leaves.jpg",
+        alt: "A community member weaving palm leaves for traditional roofing",
+      },
       { label: "Community Life 02", aspectRatio: "4/3" },
     ] as PlaceholderImage[],
   },
@@ -127,6 +151,8 @@ export const discoverPutiao = {
         image: {
           label: "Fishing / livelihood image",
           aspectRatio: "4/3",
+          src: "/images/discover/culture/fisherman-net-boat.jpg",
+          alt: "A fisherman checking his net from a wooden boat on the Putiao River",
         } satisfies PlaceholderImage,
       },
       {
@@ -135,6 +161,9 @@ export const discoverPutiao = {
         image: {
           label: "Handicraft / tradition image",
           aspectRatio: "4/3",
+          src: "/images/discover/culture/salakot-making.jpg",
+          alt: "Traditional salakot making in Putiao",
+          objectPosition: "center 15%",
         } satisfies PlaceholderImage,
       },
     ],

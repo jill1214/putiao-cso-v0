@@ -1,5 +1,5 @@
 import { SectionLabel } from '@/components/site-header'
-import { ImagePlaceholder } from './ImagePlaceholder'
+import { DiscoverImage } from './DiscoverImage'
 import { discoverPutiao } from '@/data/discover-putiao'
 
 export function RiverStory() {
@@ -8,7 +8,7 @@ export function RiverStory() {
   return (
     <section id="river-story" className="scroll-mt-28 border-y border-[#e5eee7] bg-white">
       <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:py-28">
-        <ImagePlaceholder label={image.label} caption={image.caption} aspectRatio={image.aspectRatio} className="min-h-[280px] rounded-[28px] lg:min-h-[420px]" />
+        <DiscoverImage image={image} className="min-h-[280px] rounded-[28px] lg:min-h-[420px]" sizes="(min-width: 1024px) 50vw, 100vw" />
         <div>
           <SectionLabel>Place identity</SectionLabel>
           <h2 className="max-w-md text-3xl font-extrabold tracking-[-0.05em] text-[#10221b] sm:text-4xl">{heading}</h2>
