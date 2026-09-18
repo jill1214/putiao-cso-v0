@@ -6,7 +6,7 @@ import { HashLink } from './hash-link'
 
 type NavLink = { label: string; href: string }
 
-export function MobileNav({ links, contactHref = '#contact-form' }: { links: NavLink[]; contactHref?: string }) {
+export function MobileNav({ links, contactHref = '/#contact-form' }: { links: NavLink[]; contactHref?: string }) {
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
