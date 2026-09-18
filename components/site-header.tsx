@@ -2,19 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, Waves } from 'lucide-react'
 import { MobileNav } from './mobile-nav'
+import { HashLink } from './hash-link'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Programs', href: '#programs' },
-  { label: 'Leadership', href: '#leadership' },
-  { label: 'Updates', href: '#updates' },
+  { label: 'About', href: '/#about' },
+  { label: 'Programs', href: '/#programs' },
+  { label: 'Leadership', href: '/#leadership' },
+  { label: 'Updates', href: '/#updates' },
 ]
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#dfe9e2]/70 bg-[#fafcfa]/95 backdrop-blur-md">
       <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-5 sm:px-8">
-        <Link href="#top" className="group flex items-center gap-3" aria-label="PMPMH home">
+        <Link href="/" className="group flex items-center gap-3" aria-label="Go to Putiao, My Place, My Home, CSO, Inc. homepage">
           <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cso_logo-Dr5hyzQPKbFCclISUSc4rVP6BZ720g.png" alt="Putiao, My Place, My Home, CSO, Inc. logo" width={48} height={48} className="size-12 rounded-full object-cover shadow-sm transition-transform group-hover:rotate-[-8deg]" priority />
           <span className="flex min-w-0 flex-col leading-none">
             <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#0b6b3a]">PMPMH</span>
@@ -22,10 +23,10 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
-          {links.map((link) => <Link key={link.href} href={link.href} className="text-sm font-semibold text-[#45554e] transition-colors hover:text-[#0b6b3a]">{link.label}</Link>)}
-          <Link href="#contact-form" className="group inline-flex items-center gap-2 rounded-full bg-[#0b6b3a] px-5 py-3 text-sm font-bold text-white transition-all hover:bg-[#075530] hover:shadow-lg hover:shadow-[#0b6b3a]/15">Get involved <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
+          {links.map((link) => <HashLink key={link.href} href={link.href} className="text-sm font-semibold text-[#45554e] transition-colors hover:text-[#0b6b3a]">{link.label}</HashLink>)}
+          <HashLink href="/#contact-form" className="group inline-flex items-center gap-2 rounded-full bg-[#0b6b3a] px-5 py-3 text-sm font-bold text-white transition-all hover:bg-[#075530] hover:shadow-lg hover:shadow-[#0b6b3a]/15">Get involved <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></HashLink>
         </nav>
-        <MobileNav links={links} contactHref="#contact-form" />
+        <MobileNav links={links} contactHref="/#contact-form" />
       </div>
     </header>
   )
