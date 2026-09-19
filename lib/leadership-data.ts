@@ -7,7 +7,8 @@ export type Leader = {
   fullBio?: string[]
 }
 
-const defaultBio = 'Gateway between Albay and Sorsogon. Putiao is a community worth discovering.'
+const comingSoonBio = 'Photo and bio coming soon.'
+const bioComingSoon = 'Bio coming soon.'
 
 export const leaderData: Leader[] = [
   {
@@ -24,14 +25,33 @@ export const leaderData: Leader[] = [
       "In 2024, two years after his early retirement in government in 2022 and while actively practicing in private, he initiated the formation of the civil society organization together with the 'kabababayans'. The goals: Environmental Stewardship, Community Eco-tourism, Local Livelihood, and Urban Development.",
     ],
   },
-  { role: 'VP, Philippine Affairs', name: 'Arch. Rodel Jay Lleva', shortBio: defaultBio },
-  { role: 'VP, Foreign Affairs', name: 'Ms. Guia Lorin', shortBio: defaultBio },
-  { role: 'Secretary', name: 'Ruby L-Mendones Macasinag', shortBio: defaultBio },
-  { role: 'Treasurer', name: 'Dra. Phoebes Marifosque', shortBio: defaultBio },
-  { role: 'Public Relations Officer', name: 'Angelo Mabini', shortBio: defaultBio },
-  { role: 'Director, Religious Affairs', name: 'Ma. Angela Marchan Pesebre', shortBio: defaultBio },
-  { role: 'Director, Development & Infrastructure', name: 'Arch. Bea Endaya', shortBio: defaultBio },
-  { role: 'Director, Entrepreneurship', name: 'Anthony Cesar Fortuno', shortBio: defaultBio },
-  { role: 'Director, Youth Affairs', name: 'Saedne Shane G. Lubiano', shortBio: defaultBio },
-  { role: 'Director, Environment, Culture & Tourism', name: 'Dr. Noemi L. Ibo', shortBio: defaultBio },
+  { role: 'VP, Philippine Affairs', name: 'Arch. Rodel Jay Lleva', shortBio: comingSoonBio },
+  {
+    role: 'VP, Foreign Affairs',
+    name: 'Ms. Guia Lorin',
+    image: '/images/leadership/guia-lorin.png',
+    imagePosition: 'center 20%',
+    shortBio: bioComingSoon,
+  },
+  { role: 'Secretary', name: 'Ruby L-Mendones Macasinag', shortBio: comingSoonBio },
+  { role: 'Treasurer', name: 'Dra. Phoebes Marifosque', shortBio: comingSoonBio },
+  { role: 'Public Relations Officer', name: 'Angelo Mabini', shortBio: comingSoonBio },
+  { role: 'Director, Religious Affairs', name: 'Ma. Angela Marchan Pesebre', shortBio: comingSoonBio },
+  { role: 'Director, Development & Infrastructure', name: 'Arch. Bea Endaya', shortBio: comingSoonBio },
+  { role: 'Director, Entrepreneurship', name: 'Anthony Cesar Fortuno', shortBio: comingSoonBio },
+  { role: 'Director, Youth Affairs', name: 'Saedne Shane G. Lubiano', shortBio: comingSoonBio },
+  { role: 'Director, Environment, Culture & Tourism', name: 'Dr. Noemi L. Ibo', shortBio: comingSoonBio },
+  {
+    role: 'Director, Business Development',
+    name: 'Antonio Tan',
+    image: '/images/leadership/antonio-tan.png',
+    imagePosition: 'center 20%',
+    shortBio:
+      'Antonio Tan is a seasoned industry professional with decades of leadership experience in quality assurance, research and development, manufacturing, and technology management across major food and beverage companies. His career includes senior roles at Del Monte Philippines, Universal Robina Corporation, Unilever Philippines, Splash Corporation, Quench Plus Corporation, and Tan Hiep Phat.',
+    fullBio: [
+      'Antonio Tan is an accomplished professional with extensive experience in quality assurance, research and development, manufacturing, and technology management in the food and beverage industry. Over the course of several decades, he has held key leadership roles in respected companies, contributing his expertise to product quality, process improvement, innovation, and operational development.',
+      'His professional journey includes serving as Mfg Business Devt Manager at Del Monte Philippines from 2013 to 2021, AVP SRI at Splash Corporation, Valenzuela Plant from 2011 to 2013, and QA Director at Tan Hiep Phat, Binh Duong from 2010 to 2011. He also served as VP for R&D and QA at Quench Plus Corporation from 2009 to 2010, Group Technology Manager at Universal Robina Corporation from 1995 to 2009, QA Manager at Unilever Philippines from 1981 to 1993, and began his career in QA at Del Monte Philippines Inc. in 1981.',
+      'In addition to his professional achievements, Antonio Tan studied at the Ateneo de Manila University, Ateneo-Regis Program, and at the University of the Philippines Los Baños. He also attended Holy Family Academy. His long-standing career reflects deep technical knowledge, leadership capability, and a strong commitment to excellence in the industry.',
+    ],
+  },
 ]
