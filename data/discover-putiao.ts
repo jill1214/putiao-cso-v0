@@ -110,9 +110,24 @@ export const discoverPutiao = {
     heading: "Caring for Our Home",
     copy: "Discovering Putiao also means understanding the responsibility of caring for it. Community volunteers take part in activities that help protect the river and surrounding environment.",
     images: [
-      { label: "Cleanup Image 01", aspectRatio: "4/3" },
-      { label: "Cleanup Image 02", aspectRatio: "4/3" },
-      { label: "Cleanup Image 03", aspectRatio: "4/3" },
+      {
+        label: "Cleanup Image 01",
+        aspectRatio: "4/3",
+        src: "/images/discover/cleanup/river-cleanup-volunteers-banner.jpg",
+        alt: "Community volunteers holding a Putiao River Cleanup welcome banner",
+      },
+      {
+        label: "Cleanup Image 02",
+        aspectRatio: "4/3",
+        src: "/images/discover/cleanup/river-cleanup-trash-collection.jpg",
+        alt: "A volunteer clearing a large pile of collected waste along the riverbank",
+      },
+      {
+        label: "Cleanup Image 03",
+        aspectRatio: "4/3",
+        src: "/images/discover/cleanup/river-cleanup-volunteers-sacks.jpg",
+        alt: "Young volunteers with a Putiao youth chapter banner and filled trash sacks after the cleanup",
+      },
     ] as PlaceholderImage[],
     caption: { title: "Putiao River Cleanup", date: "December 29, 2025" },
   },
@@ -121,15 +136,30 @@ export const discoverPutiao = {
     heading: "The People Behind the Place",
     copy: "Putiao is shaped not only by its river and landscape, but by the people who call it home. Families, volunteers, workers, community leaders, and residents carry the stories, traditions, and future of the place.",
     gallery: [
-      { label: "Community Portrait 01", aspectRatio: "3/4" },
-      { label: "Community Portrait 02", aspectRatio: "3/4" },
+      {
+        label: "Community Portrait 01",
+        aspectRatio: "3/4",
+        src: "/images/discover/community/family-bamboo-raft.jpg",
+        alt: "A family with children in life vests on a bamboo raft on the Putiao River",
+      },
+      {
+        label: "Community Portrait 02",
+        aspectRatio: "3/4",
+        src: "/images/discover/community/river-boat-trip-group.jpg",
+        alt: "A group of community members on a boat trip along the Putiao River",
+      },
       {
         label: "Community Life 01",
         aspectRatio: "4/3",
         src: "/images/discover/community/weaving-palm-leaves.jpg",
         alt: "A community member weaving palm leaves for traditional roofing",
       },
-      { label: "Community Life 02", aspectRatio: "4/3" },
+      {
+        label: "Community Life 02",
+        aspectRatio: "4/3",
+        src: "/images/discover/community/family-riverside-gathering.jpg",
+        alt: "Families gathered riverside with children in life vests",
+      },
     ] as PlaceholderImage[],
   },
 
@@ -143,6 +173,9 @@ export const discoverPutiao = {
         image: {
           label: "Local food image",
           aspectRatio: "4/3",
+          src: "/images/discover/culture/fresh-coconut-local-food.jpg",
+          alt: "Fresh coconut enjoyed by the riverside in Putiao",
+          objectPosition: "center 65%",
         } satisfies PlaceholderImage,
       },
       {
