@@ -29,7 +29,7 @@ export function LeaderCard({ leader }: { leader: Leader }) {
       )}
       <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#0b6b3a]">{role}</p>
       <h3 className="mt-2 text-base font-extrabold leading-snug text-[#10221b]">{name}</h3>
-      <p className="mt-3 border-t border-[#edf2ee] pt-3 text-xs leading-5 text-[#66736d]">{shortBio}</p>
+      <p className="mt-3 line-clamp-4 border-t border-[#edf2ee] pt-3 text-xs leading-5 text-[#66736d]">{shortBio}</p>
       {fullBio && fullBio.length > 0 && (
         <Dialog>
           <DialogTrigger className="mt-3 inline-block cursor-pointer border-none bg-transparent p-0 text-xs font-extrabold text-[#0b6b3a] outline-none hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-2">
