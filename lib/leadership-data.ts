@@ -8,7 +8,7 @@ export type Leader = {
   quote?: string
 }
 
-const comingSoonBio = 'Photo and bio coming soon.'
+export const comingSoonBio = 'Photo and bio coming soon.'
 const bioComingSoon = 'Bio coming soon.'
 
 export const leaderData: Leader[] = [
@@ -80,3 +80,9 @@ export const leaderData: Leader[] = [
     ],
   },
 ]
+
+// Presentation-level filter: placeholder-only records stay in the data but are not rendered.
+export const hasLeaderProfile = (leader: Leader) =>
+  Boolean(leader.image) ||
+  Boolean(leader.fullBio?.length) ||
+  (Boolean(leader.shortBio) && leader.shortBio !== comingSoonBio)

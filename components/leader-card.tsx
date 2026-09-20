@@ -10,7 +10,7 @@ export function LeaderCard({ leader }: { leader: Leader }) {
   const initial = name.split(' ').filter(Boolean).slice(-1)[0]?.[0] ?? 'P'
 
   return (
-    <article className="rounded-[20px] border border-[#dfe9e2] bg-white p-5">
+    <article className="flex min-h-[19.25rem] flex-col rounded-[20px] border border-[#dfe9e2] bg-white p-5">
       <div className="mb-5 flex items-start gap-4 lg:max-xl:gap-3">
         {image ? (
           <div className="size-16 shrink-0 overflow-hidden rounded-full">
@@ -36,10 +36,12 @@ export function LeaderCard({ leader }: { leader: Leader }) {
       </div>
       <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#0b6b3a]">{role}</p>
       <h3 className="mt-2 text-base font-extrabold leading-snug text-[#10221b]">{name}</h3>
-      <p className="mt-3 line-clamp-4 border-t border-[#edf2ee] pt-3 text-xs leading-5 text-[#66736d]">{shortBio}</p>
+      <p className="mt-3 mb-3 line-clamp-4 border-t border-[#edf2ee] pt-3 text-xs leading-5 text-[#66736d]">
+        {shortBio}
+      </p>
       {fullBio && fullBio.length > 0 && (
         <Dialog>
-          <DialogTrigger className="mt-3 inline-block cursor-pointer border-none bg-transparent p-0 text-xs font-extrabold text-[#0b6b3a] outline-none hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-2">
+          <DialogTrigger className="mt-auto cursor-pointer self-start border-none bg-transparent p-0 text-xs font-extrabold text-[#0b6b3a] outline-none hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-2">
             See more
           </DialogTrigger>
           <DialogContent aria-describedby={undefined} className="p-0">
