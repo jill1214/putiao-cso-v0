@@ -6,27 +6,34 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/
 import type { Leader } from '@/lib/leadership-data'
 
 export function LeaderCard({ leader }: { leader: Leader }) {
-  const { role, name, image, imagePosition, shortBio, fullBio } = leader
+  const { role, name, image, imagePosition, shortBio, fullBio, quote } = leader
   const initial = name.split(' ').filter(Boolean).slice(-1)[0]?.[0] ?? 'P'
 
   return (
     <article className="rounded-[20px] border border-[#dfe9e2] bg-white p-5">
-      {image ? (
-        <div className="mb-5 size-16 overflow-hidden rounded-full">
-          <Image
-            src={image}
-            alt={`${name}, ${role} of Putiao, My Place, My Home, CSO, Inc.`}
-            width={64}
-            height={64}
-            className="size-16 object-cover"
-            style={{ objectPosition: imagePosition ?? 'center' }}
-          />
-        </div>
-      ) : (
-        <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-[#e4f3e8] text-xl font-extrabold text-[#0b6b3a]">
-          {initial}
-        </div>
-      )}
+      <div className="mb-5 flex items-start gap-4 lg:max-xl:gap-3">
+        {image ? (
+          <div className="size-16 shrink-0 overflow-hidden rounded-full">
+            <Image
+              src={image}
+              alt={`${name}, ${role} of Putiao, My Place, My Home, CSO, Inc.`}
+              width={64}
+              height={64}
+              className="size-16 object-cover"
+              style={{ objectPosition: imagePosition ?? 'center' }}
+            />
+          </div>
+        ) : (
+          <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-[#e4f3e8] text-xl font-extrabold text-[#0b6b3a]">
+            {initial}
+          </div>
+        )}
+        {quote && (
+          <p className="min-w-0 flex-1 text-xs italic leading-5 text-[#5b7267] lg:max-xl:text-[11px] lg:max-xl:leading-4">
+            &ldquo;{quote}&rdquo;
+          </p>
+        )}
+      </div>
       <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#0b6b3a]">{role}</p>
       <h3 className="mt-2 text-base font-extrabold leading-snug text-[#10221b]">{name}</h3>
       <p className="mt-3 line-clamp-4 border-t border-[#edf2ee] pt-3 text-xs leading-5 text-[#66736d]">{shortBio}</p>

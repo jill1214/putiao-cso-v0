@@ -5,6 +5,7 @@ export type Leader = {
   imagePosition?: string
   shortBio: string
   fullBio?: string[]
+  quote?: string
 }
 
 const comingSoonBio = 'Photo and bio coming soon.'
@@ -16,6 +17,7 @@ export const leaderData: Leader[] = [
     name: 'Architect Levy O. Espinas',
     image: '/images/leadership/pres-levy.png',
     imagePosition: 'center 20%',
+    quote: "If you plan, someone will build. And if it's build, they will come.",
     shortBio:
       'Founding President of PMPMH, CSO, Inc., and a licensed Environmental/Urban Planner and Architect with over three decades of experience in planning, architecture, and community development.',
     fullBio: [
@@ -46,7 +48,19 @@ export const leaderData: Leader[] = [
     ],
   },
   { role: 'Treasurer', name: 'Dra. Phoebes Marifosque', shortBio: comingSoonBio },
-  { role: 'Public Relations Officer', name: 'Angelo Mabini', shortBio: comingSoonBio },
+  {
+    role: 'Public Relations Officer',
+    name: 'Angelo Mabini',
+    image: '/images/leadership/angelo-mabini.jpeg',
+    imagePosition: 'center 20%',
+    shortBio:
+      'Angelo Mabini is a digital marketing professional specializing in Google Ads, SEO, analytics, and paid media. With more than three years of experience managing search campaigns and digital marketing strategies for businesses in the United States, North America, and Australia, he brings a data-driven approach to communications, online visibility, and audience engagement.',
+    fullBio: [
+      'Angelo Mabini is a digital marketing professional with more than three years of experience specializing in Google Ads, search engine optimization, analytics, and performance marketing. He has managed search campaigns and SEO strategies for service-based businesses in the United States and North America, as well as an Australian ecommerce business, with a focus on improving online visibility, generating qualified leads, and supporting measurable business growth.',
+      'His experience includes Google Ads campaign management, keyword research, search-term analysis, on-page and technical SEO, campaign troubleshooting, policy compliance, and performance recovery. He is also experienced in digital reporting and performance analysis using tools such as Google Analytics, Google Search Console, Google Sheets, and Asana.',
+      'In addition to search marketing, Angelo has hands-on experience with Meta Ads, including campaign management, creative testing, performance monitoring, Events Manager, Meta Pixel, and Conversions API tracking. His work combines analytical decision-making with practical execution across paid advertising, search visibility, conversion tracking, and digital communications.',
+    ],
+  },
   { role: 'Director, Religious Affairs', name: 'Ma. Angela Marchan Pesebre', shortBio: comingSoonBio },
   { role: 'Director, Development & Infrastructure', name: 'Arch. Bea Endaya', shortBio: comingSoonBio },
   { role: 'Director, Entrepreneurship', name: 'Anthony Cesar Fortuno', shortBio: comingSoonBio },
