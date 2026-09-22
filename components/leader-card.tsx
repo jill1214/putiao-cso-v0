@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/
 import type { Leader } from '@/lib/leadership-data'
 
 export function LeaderCard({ leader }: { leader: Leader }) {
-  const { role, name, image, imagePosition, shortBio, fullBio, quote } = leader
+  const { role, name, image, imagePosition, shortBio, fullBio, quote, quoteAttribution } = leader
   const initial = name.split(' ').filter(Boolean).slice(-1)[0]?.[0] ?? 'P'
 
   return (
@@ -31,6 +31,11 @@ export function LeaderCard({ leader }: { leader: Leader }) {
         {quote && (
           <p className="min-w-0 flex-1 text-xs italic leading-5 text-[#5b7267] lg:max-xl:text-[11px] lg:max-xl:leading-4">
             &ldquo;{quote}&rdquo;
+            {quoteAttribution && (
+              <span className="mt-0.5 block text-[10px] not-italic text-[#8a988f] lg:max-xl:text-[9px]">
+                {quoteAttribution}
+              </span>
+            )}
           </p>
         )}
       </div>
