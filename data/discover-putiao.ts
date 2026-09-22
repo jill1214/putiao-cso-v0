@@ -145,7 +145,7 @@ export const discoverPutiao = {
       {
         label: "Community Portrait 02",
         aspectRatio: "3/4",
-        src: "/images/discover/community/river-boat-trip-group.jpg",
+        src: "/images/discover/community/young-coconut.jpg",
         alt: "A group of community members on a boat trip along the Putiao River",
       },
       {
