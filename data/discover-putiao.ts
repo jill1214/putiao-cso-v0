@@ -169,12 +169,12 @@ export const discoverPutiao = {
     blocks: [
       {
         title: "Local Food",
-        copy: "Traditional and local food stories that reflect the community and its way of life.",
+        copy: "Suman and ibos are traditional local delicacies often enjoyed with hot coffee for breakfast or merienda, reflecting the simple food traditions that remain part of everyday life in Putiao.",
         image: {
           label: "Local food image",
           aspectRatio: "4/3",
-          src: "/images/discover/culture/fresh-coconut-local-food.jpg",
-          alt: "Fresh coconut enjoyed by the riverside in Putiao",
+          src: "/images/discover/culture/suman-ibos-coffee.png",
+          alt: "Suman and ibos served with coffee, traditional local food in Putiao",
           objectPosition: "center 65%",
         } satisfies PlaceholderImage,
       },
