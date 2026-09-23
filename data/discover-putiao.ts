@@ -86,7 +86,16 @@ export const discoverPutiao = {
         src: "/images/discover/river-life/community-bonfire.jpg",
         alt: "Community members gathered around a bonfire near the river at night",
       },
-    ] as Array<PlaceholderImage & { size: "large" | "medium" | "small" }>,
+      {
+        label: "River Life 07",
+        caption: "Boats and kayaks",
+        aspectRatio: "16/9",
+        size: "wide",
+        src: "/images/discover/river-life/life-along-the-river-boat-family.jpg",
+        alt: "Community members traveling by boat and kayaking along the Putiao River",
+        objectPosition: "center 68%",
+      },
+    ] as Array<PlaceholderImage & { size: "large" | "medium" | "small" | "wide" }>,
   },
 
   riverCruise: {
