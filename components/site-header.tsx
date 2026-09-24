@@ -490,10 +490,10 @@ export function FeatureBand() {
         <Link
           href="/discover-putiao"
           aria-label="Discover Putiao"
-          className="group relative block w-full max-w-xs shrink-0 md:max-w-none overflow-hidden rounded-2xl shadow-lg shadow-black/20 transition-shadow duration-300 hover:shadow-xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b6b3a] md:mx-6 md:w-64 md:h-44 lg:w-[28rem] lg:h-56 xl:w-[28rem] xl:h-60"
+          className="group relative block aspect-[3/2] w-full max-w-xs shrink-0 md:aspect-auto md:max-w-none overflow-hidden rounded-2xl shadow-lg shadow-black/20 transition-shadow duration-300 hover:shadow-xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b6b3a] md:mx-6 md:w-64 md:h-44 lg:w-[28rem] lg:h-56 xl:w-[28rem] xl:h-60"
         >
           <Image
-            src="/images/discover/community/discover-green-card-mt-mayon.png"
+            src="/images/discover/community/discover-green-card-mt-mayon.jpg"
             alt="Putiao River with Mayon Volcano in the background"
             fill
             sizes="(min-width: 1280px) 480px, (min-width: 1024px) 384px, (min-width: 768px) 256px, 90vw"
