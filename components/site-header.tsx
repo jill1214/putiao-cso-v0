@@ -270,9 +270,10 @@ export function ContactForm() {
       <label className="flex flex-col gap-2 text-sm font-semibold text-[#10221b]">
         Subject
         <input
+          id="contact-subject"
           required
           className="h-12 rounded-xl border border-[#dfe9e2] bg-white px-4 font-normal outline-none focus:border-[#0b6b3a] focus:ring-2 focus:ring-[#0b6b3a]/15"
-          placeholder="How would you like to get involved?"
+          placeholder="How would you like to get involved? Volunteer, collaborate, or share a Putiao story?"
         />
       </label>
       <label className="flex flex-col gap-2 text-sm font-semibold text-[#10221b]">

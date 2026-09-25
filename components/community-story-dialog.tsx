@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { useRef, useState, type MouseEvent } from "react";
 
 import {
   Dialog,
@@ -209,8 +210,39 @@ function SupportingEntry({ memory }: { memory: SupportingMemory }) {
 }
 
 export function CommunityStoryDialog() {
+  const [open, setOpen] = useState(false);
+  const navigateToFormAfterClose = useRef(false);
+
+  function handleStoryCtaClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    navigateToFormAfterClose.current = true;
+    setOpen(false);
+  }
+
+  function handleOpenChangeComplete(isOpen: boolean) {
+    if (isOpen || !navigateToFormAfterClose.current) return;
+
+    navigateToFormAfterClose.current = false;
+    const formSection = document.getElementById("contact-form");
+    const subjectField = document.getElementById("contact-subject");
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.history.pushState(null, "", "/#contact-form");
+    formSection?.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
+    subjectField?.focus({ preventScroll: true });
+  }
+
   return (
-    <Dialog>
+    <Dialog
+      open={open}
+      onOpenChange={setOpen}
+      onOpenChangeComplete={handleOpenChangeComplete}
+    >
       <DialogTrigger className="group inline-flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-sm font-extrabold text-[#0b6b3a] outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-4">
         Explore Stories from Suba
         <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -308,6 +340,14 @@ export function CommunityStoryDialog() {
                   Help us continue building Putiao’s living community archive,
                   one memory at a time.
                 </p>
+                <a
+                  href="/#contact-form"
+                  onClick={handleStoryCtaClick}
+                  className="group mt-7 inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-full bg-[#b4e69e] px-6 text-center text-sm font-extrabold text-[#10221b] outline-none transition-colors hover:bg-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#10221b]"
+                >
+                  Share your Putiao story
+                  <ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
               </div>
             </div>
           </section>
