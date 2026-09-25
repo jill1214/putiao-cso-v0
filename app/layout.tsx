@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Protecting the Putiao River, preserving culture and heritage, supporting livelihoods, and building a stronger community for a sustainable tomorrow.",
   generator: "v0.app",
+
+  metadataBase: new URL("https://putiao-cso-v0.vercel.app"),
+
   icons: {
     icon: [
       {
@@ -31,6 +34,32 @@ export const metadata: Metadata = {
       },
     ],
     apple: "/apple-icon.png",
+  },
+
+  openGraph: {
+    title: "Putiao, My Place, My Home, CSO, Inc.",
+    description:
+      "Protecting the Putiao River, preserving culture and heritage, supporting livelihoods, and building a stronger community for a sustainable tomorrow.",
+    url: "https://putiao-cso-v0.vercel.app",
+    siteName: "Putiao, My Place, My Home, CSO, Inc.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Putiao, My Place, My Home, CSO, Inc.",
+      },
+    ],
+    locale: "en_PH",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Putiao, My Place, My Home, CSO, Inc.",
+    description:
+      "Protecting the Putiao River, preserving culture and heritage, supporting livelihoods, and building a stronger community for a sustainable tomorrow.",
+    images: ["/og-image.png"],
   },
 };
 
