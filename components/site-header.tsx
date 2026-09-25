@@ -208,7 +208,7 @@ export function PillarIcon({
 }) {
   return (
     <span className="grid size-12 place-items-center rounded-2xl bg-[#eff8f2] text-[#0b6b3a]">
-      <Icon className="size-6" strokeWidth={1.7} />
+      <Icon className="size-6" />
     </span>
   );
 }
