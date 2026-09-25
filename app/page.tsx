@@ -239,7 +239,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+        <section className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:py-28">
           <HeritageVisual />
           <div>
             <SectionLabel>Culture & heritage</SectionLabel>
@@ -253,7 +253,9 @@ export default function Home() {
             </p>
             <p className="mt-4 text-sm leading-7 text-[#66736d]">
               We are building a living digital archive of the heritage that
-              gives this community its identity.
+              gives this community its identity. Click below to discover real
+              stories and memories shared by people whose lives have been shaped
+              by the Putiao River.
             </p>
             <div className="mt-7">
               <CommunityStoryDialog />

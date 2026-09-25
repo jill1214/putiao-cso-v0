@@ -1,147 +1,148 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
+} from "@/components/ui/dialog";
 
 type StoryImage = {
-  src: string
-  alt: string
-  width: number
-  height: number
-}
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
 type FeaturedStory = {
-  contributor: string
-  title: string
-  summary: string[]
-  image: StoryImage
-}
+  contributor: string;
+  title: string;
+  summary: string[];
+  image: StoryImage;
+};
 
 type SupportingMemory = {
-  contributor: string
-  summary: string[]
-  image: StoryImage
-}
+  contributor: string;
+  summary: string[];
+  image: StoryImage;
+};
 
 const featuredStories: FeaturedStory[] = [
   {
-    contributor: 'Arch. Levy O. Espinas',
-    title: 'Learning to Swim the Hard Way',
+    contributor: "Arch. Levy O. Espinas",
+    title: "Learning to Swim the Hard Way",
     summary: [
-      'For many children who grew up near the river, learning to swim did not begin with lessons or a swimming pool. Sometimes it began simply because the river was there.',
-      'Levy remembers slipping away to the river behind their home even when he knew he was not supposed to. Then came one frightening moment when getting back to the riverbank depended on his own struggling arms and legs.',
-      'He can laugh about it now. But beneath the humor is a memory familiar to many who grew up beside the Suba: the warnings of parents, the irresistible pull of the water, and the moment when fear unexpectedly became part of learning.',
+      "For many children who grew up near the river, learning to swim did not begin with lessons or a swimming pool. Sometimes it began simply because the river was there.",
+      "Levy remembers slipping away to the river behind their home even when he knew he was not supposed to. Then came one frightening moment when getting back to the riverbank depended on his own struggling arms and legs.",
+      "He can laugh about it now. But beneath the humor is a memory familiar to many who grew up beside the Suba: the warnings of parents, the irresistible pull of the water, and the moment when fear unexpectedly became part of learning.",
     ],
     image: {
-      src: '/images/discover/culture/stories/levy-espinas-river-story.png',
-      alt: 'Facebook comment by Arch. Levy O. Espinas sharing a childhood memory about learning to swim in the Putiao River',
+      src: "/images/discover/culture/stories/levy-espinas-river-story.png",
+      alt: "Facebook comment by Arch. Levy O. Espinas sharing a childhood memory about learning to swim in the Putiao River",
       width: 687,
       height: 576,
     },
   },
   {
-    contributor: 'Lucia Reyes',
-    title: 'The River Where We Learned Together',
+    contributor: "Lucia Reyes",
+    title: "The River Where We Learned Together",
     summary: [
-      'Some childhood adventures ended with a scolding when everyone finally came home.',
-      'Lucia remembers bringing younger children with her to the river, even though her mother worried and sometimes became angry when she found out. But those trips eventually became part of something larger. One by one, the children learned how to swim.',
-      'Years later, what remains is not the scolding. It is the memory of children learning together, watching one another, gaining courage, and returning home with another day at the Suba behind them.',
-      'For anyone who grew up following older siblings, cousins, or friends toward the river, it may sound very familiar.',
+      "Some childhood adventures ended with a scolding when everyone finally came home.",
+      "Lucia remembers bringing younger children with her to the river, even though her mother worried and sometimes became angry when she found out. But those trips eventually became part of something larger. One by one, the children learned how to swim.",
+      "Years later, what remains is not the scolding. It is the memory of children learning together, watching one another, gaining courage, and returning home with another day at the Suba behind them.",
+      "For anyone who grew up following older siblings, cousins, or friends toward the river, it may sound very familiar.",
     ],
     image: {
-      src: '/images/discover/culture/stories/lucia-reyes-river-memory.png',
-      alt: 'Facebook comment by Lucia Reyes sharing memories of bringing younger children to the Putiao River',
+      src: "/images/discover/culture/stories/lucia-reyes-river-memory.png",
+      alt: "Facebook comment by Lucia Reyes sharing memories of bringing younger children to the Putiao River",
       width: 687,
       height: 397,
     },
   },
   {
-    contributor: 'Ging Romero',
-    title: 'The River We Went to in Secret',
+    contributor: "Ging Romero",
+    title: "The River We Went to in Secret",
     summary: [
-      'There was a particular excitement in going somewhere your parents had told you not to go.',
-      'Ging remembers secretly making her way to the river, especially around the old bridge and other familiar places where children gathered. Relatives and older family members helped her learn how to swim, and before long the river became part of days spent with cousins, friends, laughter, and the small adventures children rarely forget.',
-      'Looking back, those moments have outlasted the warnings and the scoldings.',
-      'What remains is the feeling of being young in Putiao, with the Suba waiting nearby and another adventure always seeming possible.',
+      "There was a particular excitement in going somewhere your parents had told you not to go.",
+      "Ging remembers secretly making her way to the river, especially around the old bridge and other familiar places where children gathered. Relatives and older family members helped her learn how to swim, and before long the river became part of days spent with cousins, friends, laughter, and the small adventures children rarely forget.",
+      "Looking back, those moments have outlasted the warnings and the scoldings.",
+      "What remains is the feeling of being young in Putiao, with the Suba waiting nearby and another adventure always seeming possible.",
     ],
     image: {
-      src: '/images/discover/culture/stories/ging-romero-river-memory.png',
-      alt: 'Facebook comment by Ging Romero sharing memories of secretly visiting the Putiao River',
+      src: "/images/discover/culture/stories/ging-romero-river-memory.png",
+      alt: "Facebook comment by Ging Romero sharing memories of secretly visiting the Putiao River",
       width: 680,
       height: 262,
     },
   },
   {
-    contributor: 'Marcelino Lubiano',
-    title: 'Before Morning Light',
+    contributor: "Marcelino Lubiano",
+    title: "Before Morning Light",
     summary: [
-      'Some memories of the river began before the rest of the day had even started.',
-      'Marcelino remembers going to the Suba very early in the morning while his mother washed clothes there. For a child, it was simply part of life: following a parent, being near the water, playing, watching, and slowly becoming familiar with a place that seemed ordinary because it was always there.',
-      'Only later do such ordinary mornings become precious.',
-      'His memory recalls a time when the river was woven naturally into family routines, childhood, and home, long before anyone thought those moments might someday be worth preserving.',
+      "Some memories of the river began before the rest of the day had even started.",
+      "Marcelino remembers going to the Suba very early in the morning while his mother washed clothes there. For a child, it was simply part of life: following a parent, being near the water, playing, watching, and slowly becoming familiar with a place that seemed ordinary because it was always there.",
+      "Only later do such ordinary mornings become precious.",
+      "His memory recalls a time when the river was woven naturally into family routines, childhood, and home, long before anyone thought those moments might someday be worth preserving.",
     ],
     image: {
-      src: '/images/discover/culture/stories/marcelino-lubiano-morning-river.png',
-      alt: 'Facebook comment by Marcelino Lubiano sharing an early-morning childhood memory of the Putiao River',
+      src: "/images/discover/culture/stories/marcelino-lubiano-morning-river.png",
+      alt: "Facebook comment by Marcelino Lubiano sharing an early-morning childhood memory of the Putiao River",
       width: 687,
       height: 411,
     },
   },
   {
-    contributor: 'Leila Atutubo Mestiola',
-    title: 'Summer Days at the Suba',
+    contributor: "Leila Atutubo Mestiola",
+    title: "Summer Days at the Suba",
     summary: [
-      'For a child in Putiao, sometimes all it took was hearing that the others were going to the river.',
-      'Leila remembers those summer days when one child heading toward the Suba could quickly become a group. There were family members, friends, swimming, laughter, and sometimes a scolding waiting at home afterward.',
-      'At the time, it was simply what children did.',
-      'Years later, those ordinary summer afternoons become something else entirely: memories of people, voices, places, and a version of home that can return in an instant whenever someone says, “Do you remember the Suba?”',
+      "For a child in Putiao, sometimes all it took was hearing that the others were going to the river.",
+      "Leila remembers those summer days when one child heading toward the Suba could quickly become a group. There were family members, friends, swimming, laughter, and sometimes a scolding waiting at home afterward.",
+      "At the time, it was simply what children did.",
+      "Years later, those ordinary summer afternoons become something else entirely: memories of people, voices, places, and a version of home that can return in an instant whenever someone says, “Do you remember the Suba?”",
     ],
     image: {
-      src: '/images/discover/culture/stories/leila-atutubo-summer-river.png',
-      alt: 'Facebook comment by Leila Atutubo Mestiola sharing memories of summer days at the Putiao River',
+      src: "/images/discover/culture/stories/leila-atutubo-summer-river.png",
+      alt: "Facebook comment by Leila Atutubo Mestiola sharing memories of summer days at the Putiao River",
       width: 697,
       height: 605,
     },
   },
-]
+];
 
 const supportingMemories: SupportingMemory[] = [
   {
-    contributor: 'Naro L. Lubiano',
+    contributor: "Naro L. Lubiano",
     summary: [
-      'Naro’s memory is only a few words long, but perhaps that is why it feels so immediate. He remembers nearly drowning in the river.',
-      'For anyone who has ever misjudged the depth, lost their footing, or suddenly realized the current was stronger than expected, little explanation is needed.',
+      "Naro’s memory is only a few words long, but perhaps that is why it feels so immediate. He remembers nearly drowning in the river.",
+      "For anyone who has ever misjudged the depth, lost their footing, or suddenly realized the current was stronger than expected, little explanation is needed.",
     ],
     image: {
-      src: '/images/discover/culture/stories/naro-lubiano-near-drowning.png',
-      alt: 'Facebook comment by Naro L. Lubiano recalling that he nearly drowned in the Putiao River',
+      src: "/images/discover/culture/stories/naro-lubiano-near-drowning.png",
+      alt: "Facebook comment by Naro L. Lubiano recalling that he nearly drowned in the Putiao River",
       width: 695,
       height: 437,
     },
   },
   {
-    contributor: 'Cristy Llamoso-Ferrer',
+    contributor: "Cristy Llamoso-Ferrer",
     summary: [
-      'Cristy carries a similar memory: a moment in the river when play suddenly became frightening and she nearly drowned.',
-      'It is another reminder that the stories of the Suba are not made only of carefree afternoons. They include the moments that frightened children, worried parents, and remained vivid long after everyone had gone home.',
+      "Cristy carries a similar memory: a moment in the river when play suddenly became frightening and she nearly drowned.",
+      "It is another reminder that the stories of the Suba are not made only of carefree afternoons. They include the moments that frightened children, worried parents, and remained vivid long after everyone had gone home.",
     ],
     image: {
-      src: '/images/discover/culture/stories/cristy-llamoso-near-drowning.png',
-      alt: 'Facebook comment by Cristy Llamoso-Ferrer recalling that she nearly drowned in the Putiao River',
+      src: "/images/discover/culture/stories/cristy-llamoso-near-drowning.png",
+      alt: "Facebook comment by Cristy Llamoso-Ferrer recalling that she nearly drowned in the Putiao River",
       width: 687,
       height: 92,
     },
   },
-]
+];
 
-const storyCopyClass = 'space-y-4 text-sm leading-7 text-[#55665e] sm:text-[15px] sm:leading-8'
+const storyCopyClass =
+  "space-y-4 text-sm leading-7 text-[#55665e] sm:text-[15px] sm:leading-8";
 
 function StoryScreenshot({ image }: { image: StoryImage }) {
   return (
@@ -155,11 +156,11 @@ function StoryScreenshot({ image }: { image: StoryImage }) {
         className="h-auto w-full object-contain"
       />
     </div>
-  )
+  );
 }
 
 function StoryEntry({ story, index }: { story: FeaturedStory; index: number }) {
-  const storyNumber = String(index + 1).padStart(2, '0')
+  const storyNumber = String(index + 1).padStart(2, "0");
 
   return (
     <article className="border-t border-[#dfe9e2] px-5 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
@@ -180,13 +181,15 @@ function StoryEntry({ story, index }: { story: FeaturedStory; index: number }) {
       <StoryScreenshot image={story.image} />
 
       <div className="mx-auto mt-5 max-w-[52rem] border-l-2 border-[#4daa31] pl-4">
-        <p className="text-sm font-extrabold text-[#10221b]">{story.contributor}</p>
+        <p className="text-sm font-extrabold text-[#10221b]">
+          {story.contributor}
+        </p>
         <p className="mt-1 text-xs leading-5 text-[#7a8981]">
           Shared in the PMPMH community conversation
         </p>
       </div>
     </article>
-  )
+  );
 }
 
 function SupportingEntry({ memory }: { memory: SupportingMemory }) {
@@ -202,14 +205,14 @@ function SupportingEntry({ memory }: { memory: SupportingMemory }) {
       </div>
       <StoryScreenshot image={memory.image} />
     </article>
-  )
+  );
 }
 
 export function CommunityStoryDialog() {
   return (
     <Dialog>
       <DialogTrigger className="group inline-flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-sm font-extrabold text-[#0b6b3a] outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-4">
-        Share a Putiao story
+        Explore Stories from Suba
         <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </DialogTrigger>
 
@@ -239,9 +242,9 @@ export function CommunityStoryDialog() {
                 lifelong memories.
               </p>
               <p>
-                We invited members of the Putiao community to share the
-                memories they still carry with them. Their original words are
-                preserved here, just as they were shared.
+                We invited members of the Putiao community to share the memories
+                they still carry with them. Their original words are preserved
+                here, just as they were shared.
               </p>
             </div>
           </header>
@@ -263,8 +266,8 @@ export function CommunityStoryDialog() {
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[#55665e] sm:text-[15px] sm:leading-8">
                 The Suba was a place of laughter and freedom, but the people who
                 grew up around it also understood its danger. Some memories
-                survived because someone was lucky enough to make it safely
-                back to shore.
+                survived because someone was lucky enough to make it safely back
+                to shore.
               </p>
             </div>
 
@@ -279,7 +282,9 @@ export function CommunityStoryDialog() {
             <div className="mx-auto max-w-[52rem]">
               <div className="space-y-4 font-serif text-2xl leading-snug tracking-[-0.02em] text-white sm:text-3xl">
                 <p>These stories may seem ordinary.</p>
-                <p className="text-[#b4e69e]">That is exactly why they matter.</p>
+                <p className="text-[#b4e69e]">
+                  That is exactly why they matter.
+                </p>
               </div>
               <div className="mt-8 space-y-5 text-sm leading-7 text-white/70 sm:text-[15px] sm:leading-8">
                 <p>
@@ -309,5 +314,5 @@ export function CommunityStoryDialog() {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
