@@ -29,6 +29,7 @@ import { LeaderCard } from "@/components/leader-card";
 import { hasLeaderProfile, leaderData } from "@/lib/leadership-data";
 import { ScrollToHash } from "@/components/scroll-to-hash";
 import { OriginStoryDialog } from "@/components/origin-story-dialog";
+import { CommunityStoryDialog } from "@/components/community-story-dialog";
 
 const pillarData = [
   [
@@ -255,7 +256,7 @@ export default function Home() {
               gives this community its identity.
             </p>
             <div className="mt-7">
-              <ArrowLink href="/#contact-form">Share a Putiao story</ArrowLink>
+              <CommunityStoryDialog />
             </div>
           </div>
         </section>

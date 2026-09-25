@@ -301,7 +301,14 @@ export const iconProps = { className: "size-6", strokeWidth: 1.7 };
 
 export function HeritageVisual() {
   return (
-    <div className="relative min-h-[320px] overflow-hidden rounded-[28px] bg-[url('/putiao-river.png')] bg-cover bg-center">
+    <div className="relative min-h-[320px] overflow-hidden rounded-[28px] bg-[#244c38]">
+      <Image
+        src="/images/discover/culture/stories-carried-by-the-river-final.webp"
+        alt="Putiao River winding through the green landscape of the community"
+        fill
+        sizes="(max-width: 1024px) calc(100vw - 2.5rem), 620px"
+        className="object-cover object-center"
+      />
       <div className="absolute inset-0 bg-[#075530]/35" />
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/25 bg-[#10221b]/55 p-5 text-white backdrop-blur-sm">
         <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#b4e69e]">
