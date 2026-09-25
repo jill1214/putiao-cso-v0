@@ -169,9 +169,11 @@ function StoryEntry({ story, index }: { story: FeaturedStory; index: number }) {
         <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#4daa31]">
           Community memory {storyNumber}
         </p>
+
         <h2 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight tracking-[-0.045em] text-[#10221b] sm:text-4xl">
           {story.title}
         </h2>
+
         <div className={`mt-6 ${storyCopyClass}`}>
           {story.summary.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -185,6 +187,7 @@ function StoryEntry({ story, index }: { story: FeaturedStory; index: number }) {
         <p className="text-sm font-extrabold text-[#10221b]">
           {story.contributor}
         </p>
+
         <p className="mt-1 text-xs leading-5 text-[#7a8981]">
           Shared in the PMPMH community conversation
         </p>
@@ -199,11 +202,13 @@ function SupportingEntry({ memory }: { memory: SupportingMemory }) {
       <h3 className="text-xl font-extrabold tracking-[-0.025em] text-[#10221b] sm:text-2xl">
         {memory.contributor}
       </h3>
+
       <div className={`mt-5 ${storyCopyClass}`}>
         {memory.summary.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
+
       <StoryScreenshot image={memory.image} />
     </article>
   );
@@ -213,6 +218,17 @@ export function CommunityStoryDialog() {
   const [open, setOpen] = useState(false);
   const navigateToFormAfterClose = useRef(false);
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const initialFocusRef = useRef<HTMLDivElement>(null);
+
+  function handleOpenChange(nextOpen: boolean) {
+    if (nextOpen && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+
+    setOpen(nextOpen);
+  }
+
   function handleStoryCtaClick(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault();
     navigateToFormAfterClose.current = true;
@@ -220,27 +236,39 @@ export function CommunityStoryDialog() {
   }
 
   function handleOpenChangeComplete(isOpen: boolean) {
-    if (isOpen || !navigateToFormAfterClose.current) return;
+    if (isOpen) {
+      return;
+    }
+
+    if (!navigateToFormAfterClose.current) {
+      return;
+    }
 
     navigateToFormAfterClose.current = false;
+
     const formSection = document.getElementById("contact-form");
     const subjectField = document.getElementById("contact-subject");
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     window.history.pushState(null, "", "/#contact-form");
+
     formSection?.scrollIntoView({
       behavior: prefersReducedMotion ? "auto" : "smooth",
       block: "start",
     });
-    subjectField?.focus({ preventScroll: true });
+
+    subjectField?.focus({
+      preventScroll: true,
+    });
   }
 
   return (
     <Dialog
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={handleOpenChange}
       onOpenChangeComplete={handleOpenChangeComplete}
     >
       <DialogTrigger className="group inline-flex cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-sm font-extrabold text-[#0b6b3a] outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#0b6b3a]/30 focus-visible:ring-offset-4">
@@ -249,19 +277,27 @@ export function CommunityStoryDialog() {
       </DialogTrigger>
 
       <DialogContent
+        initialFocus={initialFocusRef}
         aria-describedby="community-story-intro"
         aria-modal="true"
         className="max-h-[calc(100dvh-1rem)] w-[calc(100%-1rem)] max-w-[1080px] rounded-[24px] p-0 sm:max-h-[calc(100dvh-3rem)] sm:w-[calc(100%-3rem)] sm:rounded-[28px]"
       >
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+        <div
+          ref={scrollContainerRef}
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain"
+        >
           <header className="bg-[#eff8f2] px-5 pb-11 pt-14 sm:px-10 sm:pb-14 sm:pt-16 lg:px-16 lg:pb-16">
-            <p className="flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#0b6b3a] sm:text-xs">
-              <span className="h-px w-8 bg-[#4daa31]" />
-              Stories from the Suba
-            </p>
-            <DialogTitle className="mt-6 max-w-3xl text-4xl leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-[56px]">
-              A place is made of stories.
-            </DialogTitle>
+            <div ref={initialFocusRef} tabIndex={-1} className="outline-none">
+              <p className="flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#0b6b3a] sm:text-xs">
+                <span className="h-px w-8 bg-[#4daa31]" />
+                Stories from the Suba
+              </p>
+
+              <DialogTitle className="mt-6 max-w-3xl text-4xl leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-[56px]">
+                A place is made of stories.
+              </DialogTitle>
+            </div>
+
             <div
               id="community-story-intro"
               className="mt-7 grid gap-5 text-sm leading-7 text-[#55665e] sm:text-[15px] sm:leading-8 lg:grid-cols-2 lg:gap-12"
@@ -273,6 +309,7 @@ export function CommunityStoryDialog() {
                 rules were sometimes broken, and ordinary days quietly became
                 lifelong memories.
               </p>
+
               <p>
                 We invited members of the Putiao community to share the memories
                 they still carry with them. Their original words are preserved
@@ -292,9 +329,11 @@ export function CommunityStoryDialog() {
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#4daa31]">
                 The river remembered
               </p>
+
               <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-[-0.045em] text-[#10221b] sm:text-4xl">
                 Not every river memory was gentle.
               </h2>
+
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[#55665e] sm:text-[15px] sm:leading-8">
                 The Suba was a place of laughter and freedom, but the people who
                 grew up around it also understood its danger. Some memories
@@ -314,10 +353,12 @@ export function CommunityStoryDialog() {
             <div className="mx-auto max-w-[52rem]">
               <div className="space-y-4 font-serif text-2xl leading-snug tracking-[-0.02em] text-white sm:text-3xl">
                 <p>These stories may seem ordinary.</p>
+
                 <p className="text-[#b4e69e]">
                   That is exactly why they matter.
                 </p>
               </div>
+
               <div className="mt-8 space-y-5 text-sm leading-7 text-white/70 sm:text-[15px] sm:leading-8">
                 <p>
                   Together, they remember a Putiao where the river was a
@@ -325,7 +366,9 @@ export function CommunityStoryDialog() {
                   daily work, and sometimes the setting for the kind of
                   childhood trouble that becomes funny only many years later.
                 </p>
+
                 <p>Places change. Children grow older. People move away.</p>
+
                 <p>
                   But sometimes a few words about the river are enough to bring
                   an entire afternoon back.
@@ -336,10 +379,12 @@ export function CommunityStoryDialog() {
                 <h2 className="text-3xl font-extrabold tracking-[-0.045em] sm:text-4xl">
                   Do you have a Suba story too?
                 </h2>
+
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-white/65 sm:text-[15px]">
                   Help us continue building Putiao’s living community archive,
                   one memory at a time.
                 </p>
+
                 <a
                   href="/#contact-form"
                   onClick={handleStoryCtaClick}
