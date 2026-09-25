@@ -441,10 +441,10 @@ export function CheckList({ items }: { items: string[] }) {
 
 export function HeroImage() {
   return (
-    <div className="relative min-h-[500px] overflow-hidden rounded-[30px] bg-[url('/putiao-river.png')] bg-cover bg-center shadow-2xl shadow-[#0b6b3a]/10">
+    <div className="relative min-h-[530px] overflow-hidden rounded-[30px] bg-[url('/putiao-river.png')] bg-cover bg-center shadow-2xl shadow-[#0b6b3a]/10">
       <div className="absolute inset-0 bg-gradient-to-t from-[#10221b]/80 via-[#10221b]/15 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#10221b]/55 to-transparent" />
-      <div className="absolute left-6 right-6 top-6 flex items-center justify-between">
+      <div className="absolute left-6 right-6 top-6 flex items-center justify-between sm:top-0 sm:h-18">
         <span className="rounded-full border border-white/30 bg-[#10221b]/45 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
           Putiao, Sorsogon
         </span>
@@ -452,18 +452,23 @@ export function HeroImage() {
           <Waves className="size-5" />
         </span>
       </div>
-      <div className="absolute bottom-6 left-6 right-6">
-        <p className="font-serif text-3xl italic tracking-tight text-white/90 sm:text-4xl">
+      <div className="absolute inset-0">
+        <p className="absolute bottom-[98px] left-6 right-6 font-serif text-3xl italic tracking-tight text-white/90 sm:bottom-[88px] sm:text-4xl lg:bottom-[92px]">
           Our river.
           <br />
           Our home.
           <br />
           Our future.
         </p>
-        <div className="mt-6 flex items-center gap-3 text-xs font-medium text-white/75">
-          <span className="h-px w-8 bg-[#8dd86e]" />A community worth
-          discovering
+
+        <div className="absolute bottom-11 left-6 right-6 flex items-center gap-3 text-xs font-medium text-white/75 sm:bottom-8">
+          <span className="h-px w-8 shrink-0 bg-[#8dd86e]" />
+          <span>A community worth discovering</span>
         </div>
+
+        <span className="absolute bottom-[94px] right-4 text-[8px] font-normal tracking-[0.06em] text-white/6 sm:bottom-[72px] sm:right-6 sm:text-[12px] sm:tracking-[0.05em]">
+          created by: angelomabini&apos;26
+        </span>
       </div>
     </div>
   );
