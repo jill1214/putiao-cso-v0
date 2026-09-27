@@ -164,7 +164,7 @@ export function OriginStoryDialog() {
 
           <footer className="flex items-center justify-center gap-3 border-t border-[#dfe9e2] bg-white px-5 py-6">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cso_logo-Dr5hyzQPKbFCclISUSc4rVP6BZ720g.png"
+              src="/images/putiao-cso-logo.png"
               alt="Putiao, My Place, My Home, CSO, Inc. logo"
               width={44}
               height={44}

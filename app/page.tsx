@@ -130,7 +130,7 @@ export default function Home() {
               <SectionLabel>Our purpose</SectionLabel>
               <div className="mb-5 flex items-center gap-3">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cso_logo-Dr5hyzQPKbFCclISUSc4rVP6BZ720g.png"
+                  src="/images/putiao-cso-logo.png"
                   alt="Putiao organization logo"
                   width={56}
                   height={56}

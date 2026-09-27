@@ -21,7 +21,7 @@ export function SiteHeader() {
           aria-label="Go to Putiao, My Place, My Home, CSO, Inc. homepage"
         >
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cso_logo-Dr5hyzQPKbFCclISUSc4rVP6BZ720g.png"
+            src="/images/putiao-cso-logo.png"
             alt="Putiao, My Place, My Home, CSO, Inc. logo"
             width={48}
             height={48}
@@ -69,7 +69,7 @@ export function SiteHeader() {
 export function LogoMark({ light = false }: { light?: boolean }) {
   return (
     <Image
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cso_logo-Dr5hyzQPKbFCclISUSc4rVP6BZ720g.png"
+      src="/images/putiao-cso-logo.png"
       alt="Putiao, My Place, My Home, CSO, Inc. logo"
       width={48}
       height={48}
