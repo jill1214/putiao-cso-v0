@@ -71,6 +71,33 @@ const updateData = [
   ],
 ] as const;
 
+const faithData = [
+  {
+    eyebrow: "Our parish community",
+    title: "Holy Family Parish",
+    body: "A familiar landmark in Putiao and a gathering place for worship, celebration, service, and many of the moments that become part of community memory.",
+    image: "/images/faith/holy-family-facade.png",
+    alt: "The brick facade and bell towers of Holy Family Parish in Putiao",
+    imageClass: "object-cover object-center",
+  },
+  {
+    eyebrow: "Faith & tradition",
+    title: "Traditions that bring us together",
+    body: "From Holy Week observances to parish celebrations, shared traditions remain part of the rhythm of community life in Putiao.",
+    image: "/images/faith/palm-sunday-2026.jpg",
+    alt: "Putiao parishioners holding decorated palm fronds outside Holy Family Parish on Palm Sunday",
+    imageClass: "object-cover object-center",
+  },
+  {
+    eyebrow: "Across generations",
+    title: "Faith passed from one generation to the next",
+    body: "Children, parents, grandparents, and neighbors continue traditions that have shaped family and community life for generations.",
+    image: "/images/faith/little-angels-2026.jpg",
+    alt: "Children dressed in white gathering at Holy Family Parish for Palm Sunday",
+    imageClass: "object-cover object-center",
+  },
+] as const;
+
 export default function Home() {
   return (
     <div id="top" className="min-h-screen bg-[#fafcfa]">
@@ -312,6 +339,52 @@ export default function Home() {
               />
               <ImpactItem title="United Community" text="A shared future" />
             </div>
+          </div>
+        </section>
+        <section className="border-y border-[#e5eee7] bg-[#f7faf7]">
+          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
+            <SectionLabel>Faith &amp; community</SectionLabel>
+            <h2 className="max-w-2xl text-4xl font-extrabold tracking-[-0.05em] text-[#10221b] sm:text-5xl">
+              Faith is part of Putiao’s story.
+            </h2>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-[#66736d]">
+              For generations, faith has shaped many of Putiao’s traditions,
+              celebrations, family milestones, and acts of service. These
+              moments continue to bring people together and connect one
+              generation with the next.
+            </p>
+            <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {faithData.map((card) => (
+                <article
+                  key={card.title}
+                  className="flex h-full flex-col overflow-hidden rounded-[22px] border border-[#d7e8dc] bg-white"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e7f0e9]">
+                    <Image
+                      src={card.image}
+                      alt={card.alt}
+                      fill
+                      sizes="(min-width: 1024px) 389px, (min-width: 768px) 50vw, 100vw"
+                      className={card.imageClass}
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#0b6b3a]">
+                      {card.eyebrow}
+                    </p>
+                    <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#10221b]">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-6 text-[#66736d]">
+                      {card.body}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-xs italic text-[#91a097]">
+              Photos courtesy of Holy Family Parish, Putiao, Pilar, Sorsogon.
+            </p>
           </div>
         </section>
         <section className="scroll-mt-28 bg-[#eff8f2]" id="updates">
